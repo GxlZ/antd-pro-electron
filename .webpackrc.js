@@ -24,6 +24,6 @@ export default {
     javascriptEnabled: true,
   },
   disableDynamicImport: true,
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : './',
   hash: true,
 };

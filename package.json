@@ -3,7 +3,7 @@
   "version": "1.4.0",
   "description": "An out-of-box UI solution for enterprise applications",
   "private": true,
-  "main": "dist/electron.js",
+  "main": "public/electron.js",
   "homepage": "./",
   "postinstall": "electron-builder install-app-deps",
   "scripts": {
@@ -25,11 +25,11 @@
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:8000 && electron .\"",
     "electron-pack-mac": "electron-builder --mac --dir",
     "preelectron-pack-mac": "yarn build",
-    "electron-pack-all": "electron-builder -mwl --dir",
+    "electron-pack-all": "electron-builder --win --dir",
     "preelectron-pack-all": "yarn build",
     "electron-build-mac": "electron-builder --mac",
     "preelectron-build-mac": "yarn build",
-    "electron-build-all": "electron-builder --mwl",
+    "electron-build-all": "electron-builder -mwl",
     "preelectron-build-all": "yarn build"
   },
   "build": {
@@ -42,7 +42,7 @@
     "directories": {
       "buildResources": "src/assets"
     },
-    "compression":"store"
+    "compression": "store"
   },
   "dependencies": {
     "@antv/data-set": "^0.8.0",
@@ -53,6 +53,7 @@
     "classnames": "^2.2.5",
     "dva": "^2.2.3",
     "dva-loading": "^2.0.3",
+    "electron-is-dev": "^0.3.0",
     "enquire-js": "^0.2.1",
     "lodash": "^4.17.10",
     "lodash-decorators": "^6.0.0",
@@ -81,8 +82,8 @@
     "concurrently": "^3.6.1",
     "cross-env": "^5.1.1",
     "cross-port-killer": "^1.0.1",
+    "electron": "^2.0.6",
     "electron-dev": "^1.0.1",
-    "electron-is-dev": "^0.3.0",
     "enzyme": "^3.1.0",
     "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.0.0",
